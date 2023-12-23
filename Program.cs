@@ -17,8 +17,6 @@ namespace Wordle
             int guesses = 0;
             bool correct = false;
             List<char> wrongLetters = new List<char>();
-
-
             Dictionary<char,int> charsInWord = new Dictionary<char,int>();
 
             //Maps each char in answer string to the number of times it appear in the string
@@ -77,11 +75,12 @@ namespace Wordle
         }
 
 
-            if (correct) Console.WriteLine("You got it!");
-            else {
+            if (correct) {
+                Console.WriteLine("You got it!");
+            } else {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Better luck next time");
-                }
+            }
 
             Console.WriteLine("The word was " + answerWord);
 
@@ -120,9 +119,6 @@ namespace Wordle
 
         return out_string.Substring(0, out_string.Length -2);
         } 
-
-
-
 
     }
 }
